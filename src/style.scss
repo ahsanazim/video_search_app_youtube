@@ -1,0 +1,12 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background: darken(white, 0.2);
+  font-size: 100px;
+  font-style: italic;
+  text-decoration-color: gray;
+  text-spacing: 5px;
+}
+
+:fullscreen a {
+  display: flex;
+}
