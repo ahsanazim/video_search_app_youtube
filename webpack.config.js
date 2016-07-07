@@ -2,6 +2,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const autoprefixer = require('autoprefixer');
 
+// lists all properties autoprefixer prefixes
 const info = autoprefixer({ browsers: ['last 1 version'] }).info();
 console.log(info);
 
@@ -21,17 +22,8 @@ module.exports = {
       loader: 'babel',
     },
     {
-      test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style-loader', 'css-loader'),
-    },
-    {
       test: /\.scss/,
-      loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader'),
-    },
-      // You could also use other loaders the same way. I. e. the autoprefixer-loader
-    {
-      test: /\.css$/,
-      loader: 'style-loader!css-loader!postcss-loader',
+      loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader!postcss-loader'),
     },
     ],
   },
